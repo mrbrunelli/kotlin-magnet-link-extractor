@@ -7,7 +7,7 @@ fun getMagnetLinks(url: String): List<String> {
 
     for (element in elements) {
         val href = element.attr("href")
-        if (href.contains("magnet:?xt")) {
+        if (href.startsWith("magnet:?xt", ignoreCase = true)) {
             links.add(href)
         }
     }
